@@ -1,11 +1,20 @@
 from statistics import *
 from math import *
+from pathlib import Path
+from os import *
+
+
+
+path = Path(__file__).parent / "../dati/taratura"
+lista=listdir(path)
+print(lista)
+
 
 """bisogna modificare il path e farne uno relativo in modo che sia comune a tutti"""
 """fare poi uno script o funzione che lo faccia per tutti i file nella directori relativa"""
 
-path = '0g.txt'
-
+path = path / lista[0]
+print (path)
 file = open(path,'r')
 somma = 0
 conta = 0
