@@ -1,24 +1,24 @@
+import urllib.request
 from statistics import *
 from math import *
 from pathlib import Path
 from os import *
 from urllib import request
-import wget
 
 
 url = 'https://raw.githubusercontent.com/EdoGitMira/Progetto_Laboratorio_Misure_pesatura_dinamica/main/dati/taratura/'
-'''
+
+
 path = Path(__file__).parent / "../dati/taratura"  #path relativa quindi torna indietro e poi va avanti nelle cartelle definite.
-lista=listdir(path)
-print(lista)
-'''
-file = 'prova.txt'
-wget.download(url,file)
+lista = listdir(path)
 
-"""bisogna modificare il path e farne uno relativo in modo che sia comune a tutti"""
-"""fare poi uno script o funzione che lo faccia per tutti i file nella directori relativa"""
+for file in lista:
+    data= url + file
+    print('-'*100)
+    for line in urllib.request.urlopen(data):
 
-'''
+'''definirlo come metodo'''
+
 path = path / lista[0]
 print (path)
 file = open(path,'r')
@@ -45,7 +45,7 @@ std_dev = stdev(data)
 
 print(f'media {media} \nsdt_dev = {std_dev}')
 
-'''
+
 
 """ dobbiamo fare in modo di creare un txt con 3 colonne peso bilancia, media, e dev std"""
 
