@@ -16,15 +16,10 @@ for file in lista:
     data= url + file
     print('-'*100)
     for line in urllib.request.urlopen(data):
+        print()
 
-'''definirlo come metodo'''
-
-path = path / lista[0]
-print (path)
-file = open(path,'r')
 somma = 0
 conta = 0
-
 data = []
 
 """in questo prendiamo il file txt lo spezziamo più volte in modo da leggere l'ultima colonna e calcolare la media e la
