@@ -2,9 +2,7 @@ from pathlib import Path
 from os import *
 from urllib import request
 
-def somma(a,b):
-    return a+b
-
+# definire funzione anche con velocità per sviluppo successivo
 def readTxtUrl(url,urlnamemass):
     ''' funzione per la lettura di file .TXT da file .url di github in con link RAW'''
 
