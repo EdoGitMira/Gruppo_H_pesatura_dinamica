@@ -21,11 +21,6 @@ def lista_features_statico(url,path):
 
     return data
 
-
-def scrittura_txt(dati,directory = '',intestazione = '',nome = ''):
-
-    return None
-
 def read_names_url_txt(url):
     names = []
     for element in urllib.request.urlopen(url):
