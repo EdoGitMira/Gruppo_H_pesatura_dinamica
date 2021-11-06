@@ -24,18 +24,7 @@ def lista_features_statico(url,path):
 
 def scrittura_txt(dati,directory = '',intestazione = '',nome = ''):
 
-    percorso_completo = directory+nome
 
-    file = open(percorso_completo,'w')
-    file.write(intestazione)
-    file.write('\n')
-
-    for riga in dati:
-        for elemento in riga:
-            file.write(elemento)
-            file.write('\t')
-        file.write('\n')
-    file.close()
 
     return None
 

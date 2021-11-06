@@ -15,4 +15,14 @@ intestazione = 'peso'+'\t'+'media'+'\t'+'std_dev'
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
     lista = PreparazioneFile.lista_features_statico(url,path)
-    PreparazioneFile.scrittura_txt(lista,intestazione=intestazione,nome='prova.txt')
+
+    file = open('prova.txt', "w", encoding='utf-8')
+    file.write(intestazione)
+    file.write('\n')
+
+    for riga in lista:
+        for elemento in riga:
+            file.write(elemento)
+            file.write('\t')
+        file.write('\n')
+    file.close()
