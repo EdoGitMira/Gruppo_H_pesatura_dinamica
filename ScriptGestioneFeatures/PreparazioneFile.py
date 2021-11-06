@@ -22,11 +22,7 @@ def lista_features_statico(url,path):
     return data
 
 
-def scrittura_txt(dati,directory = '',intestazione = '',nome = ''):
 
-
-
-    return None
 
 
 

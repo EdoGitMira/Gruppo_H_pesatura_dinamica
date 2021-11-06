@@ -9,10 +9,7 @@ def calcolo_feature_statiche(nomeTxT,file):
     somma = 0
     conta = 0
     data = []
-    grammi = nomeTxT.split('.')[0]
-
-    if grammi == '607g':
-        print()
+    grammi = nomeTxT.split('.')[0].split('g')[0]
 
     for (i, element) in enumerate(file):
         if i > 5:
@@ -26,7 +23,7 @@ def calcolo_feature_statiche(nomeTxT,file):
 
     media = mean(data)
     std_dev = stdev(data)
-    riga = (grammi,media,std_dev)
+    riga = (str(grammi),str(media),str(std_dev))
 
     return riga
 

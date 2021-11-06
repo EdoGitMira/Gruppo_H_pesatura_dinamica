@@ -1,2 +1,0 @@
-peso	media	std_dev
-0g	
