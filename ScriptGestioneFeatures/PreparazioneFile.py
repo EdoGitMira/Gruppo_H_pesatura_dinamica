@@ -18,6 +18,7 @@ def lista_features_statico(url,path):
         file = urllib.request.urlopen(url_github)
         riga = CalcoloFeatures.calcolo_feature_statiche(nome_file, file)
         data.append(riga)
+
     return data
 
 
