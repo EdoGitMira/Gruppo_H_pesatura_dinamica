@@ -8,10 +8,8 @@ import os
 from pathlib import Path
 import PreparazioneFile
 
-url = 'https://raw.githubusercontent.com/EdoGitMira/Progetto_Laboratorio_Misure_pesatura_dinamica/main/dati/taratura/'
-url_name_velocity=''
-url_name_mass=''
-path = Path(__file__).parent / "../dati/taratura"  # path relativa quindi torna indietro e poi va avanti nelle cartelle definite.
+url = 'https://raw.githubusercontent.com/EdoGitMira/Progetto_Laboratorio_Misure_pesatura_dinamica/main/dati'
+url_name_velocity='https://raw.githubusercontent.com/EdoGitMira/Progetto_Laboratorio_Misure_pesatura_dinamica/main/dati/speed.txt'
 
 
 path_testo = Path(__file__).parent / "../dati/Features/Statiche"
@@ -24,7 +22,7 @@ def scrittura_txt(lista, nome_completo, intestazione=''):
 
     '''funziona tutto ma questa funzione messa nel file PreparazioneFile.py'''
 
-    file = open(nome_completo, "w", encoding='utf-8')
+    file = open(nome_completo,'W', encoding='utf-8')
     file.write(intestazione)
     file.write('\n')
 
@@ -39,6 +37,6 @@ def scrittura_txt(lista, nome_completo, intestazione=''):
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    lista = PreparazioneFile.lista_features_statico(url, path)
+    lista = PreparazioneFile.lista_features_statico(url, url_name_velocity)
     intestazione = 'peso [g]' + '\t\t' + 'media [V]' + '\t\t' + 'std_dev [V]'
     scrittura_txt(lista, complete_name, intestazione)
