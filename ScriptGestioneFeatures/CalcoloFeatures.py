@@ -11,8 +11,11 @@ def calcolo_feature_statiche(nomeTxT,file):
     data = []
     grammi = nomeTxT.split('.')[0]
 
+    if grammi == '607g':
+        print()
+
     for (i, element) in enumerate(file):
-        if i >= 5 and i < 190:
+        if i >= 5:
             element = element.decode('utf-8')
             row = element.split('\t')[1].split('\n')[0].split('E')
             numero = float(row[0].replace(',', '.'))
