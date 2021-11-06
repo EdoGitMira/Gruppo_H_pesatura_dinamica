@@ -1,24 +1,30 @@
-from statistics import *
-from math import *
 from pathlib import Path
 from os import *
 from urllib import request
 
 
+from statistics import *
+from math import *
 
+''' due righe per libreria
+non fai altro che salvare un file .py nella stessa cartella degli script dove ci sono solo funzioni 
+e poi fai l'import nome del file con il from
+'''
 url = 'https://raw.githubusercontent.com/EdoGitMira/Progetto_Laboratorio_Misure_pesatura_dinamica/main/dati/taratura/'
 
+from fileurl import *
 
-path = Path(__file__).parent / "../dati/taratura"  #path relativa quindi torna indietro e poi va avanti nelle cartelle definite.
-lista = listdir(path)
+dati = readTxtUrl(url)
+
+print(dati)
+'''fine esempio libreria si puo cancellare'''
 
 
 
-for file in lista:
-    data= url + file
-    print('-'*100)
-    for line in request.urlopen(data):
-        print()
+
+
+'''
+
 
 """in questo prendiamo il file txt lo spezziamo più volte in modo da leggere l'ultima colonna e calcolare la media e la
        deviazione standard"""
@@ -42,4 +48,4 @@ print(f'media {media} \nsdt_dev = {std_dev}')
 
 
 """ dobbiamo fare in modo di creare un txt con 3 colonne peso bilancia, media, e dev std"""
-
+'''
