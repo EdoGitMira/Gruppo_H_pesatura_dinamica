@@ -8,6 +8,8 @@ from pathlib import Path
 import PreparazioneFile
 
 url = 'https://raw.githubusercontent.com/EdoGitMira/Progetto_Laboratorio_Misure_pesatura_dinamica/main/dati/taratura/'
+url_name_velocity=''
+url_name_mass=''
 path = Path(__file__).parent / "../dati/taratura"  # path relativa quindi torna indietro e poi va avanti nelle cartelle definite.
 intestazione = 'peso'+'\t'+'media'+'\t'+'std_dev'
 

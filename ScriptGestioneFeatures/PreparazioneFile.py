@@ -24,12 +24,10 @@ def lista_features_statico(url,path):
 
 def scrittura_txt(dati,directory = '',intestazione = '',nome = ''):
 
-
-
     return None
 
-
-
-
-
-
+def read_names_url_txt(url):
+    names = []
+    for element in urllib.request.urlopen(url):
+        names.append(element.decode('utf-8'))
+    return names
