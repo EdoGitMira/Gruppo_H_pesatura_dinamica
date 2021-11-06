@@ -7,10 +7,8 @@ from urllib import request
 import CalcoloFeatures
 
 
-def prendo_file_url_statico():
-    url = 'https://raw.githubusercontent.com/EdoGitMira/Progetto_Laboratorio_Misure_pesatura_dinamica/main/dati/taratura/'
+def lista_features_statico(url,path):
 
-    path = Path(__file__).parent / "../dati/taratura"  # path relativa quindi torna indietro e poi va avanti nelle cartelle definite.
     lista = listdir(path)  # lista dei nomi dei file .txt
 
     data = []
@@ -18,12 +16,25 @@ def prendo_file_url_statico():
     for nome_file in lista:
         url_github = url + '/' + nome_file  # attacco all'url il nome del file .txt
         file = urllib.request.urlopen(url_github)
-        riga = CalcoloFeatures.calcolo_feature_statiche(lista[0], file)
+        riga = CalcoloFeatures.calcolo_feature_statiche(nome_file, file)
         data.append(riga)
-
     return data
 
-def scrittura_txt(nome,directory,intestazione):
+
+def scrittura_txt(dati,directory = '',intestazione = '',nome = ''):
+
+    percorso_completo = directory+nome
+
+    file = open(percorso_completo,'w')
+    file.write(intestazione)
+    file.write('\n')
+
+    for riga in dati:
+        for elemento in riga:
+            file.write(elemento)
+            file.write('\t')
+        file.write('\n')
+    file.close()
 
     return None
 
