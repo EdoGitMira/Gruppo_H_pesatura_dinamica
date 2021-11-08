@@ -9,7 +9,7 @@ from pathlib import Path
 import PreparazioneFile
 
 url = 'https://raw.githubusercontent.com/EdoGitMira/Progetto_Laboratorio_Misure_pesatura_dinamica/main/dati'
-url_name_velocity='https://raw.githubusercontent.com/EdoGitMira/Progetto_Laboratorio_Misure_pesatura_dinamica/main/dati/speed.txt'
+url_name_velocity = 'https://raw.githubusercontent.com/EdoGitMira/Progetto_Laboratorio_Misure_pesatura_dinamica/main/dati/speed.txt'
 
 
 path_testo = Path(__file__).parent / "../dati/Features/Statiche"
@@ -22,15 +22,17 @@ def scrittura_txt(lista, nome_completo, intestazione=''):
 
     '''funziona tutto ma questa funzione messa nel file PreparazioneFile.py'''
 
-    file = open(nome_completo,'W', encoding='utf-8')
+    file = open(nome_completo,'w', encoding='utf-8')
     file.write(intestazione)
     file.write('\n')
 
     for riga in lista:
         for elemento in riga:
-            file.write(elemento)
-            file.write('\t\t')
-        file.write('\n')
+            for dato in elemento:
+                file.write(''.join(dato))
+                file.write('\t')
+            file.write('\n')
+
     file.close()
 
     return None

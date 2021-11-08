@@ -14,6 +14,7 @@ def lista_features_statico(url_repo, url_name):  # read all file from git hub an
         url_mass = url_repo + '/v' + velocity + '/mass.txt'
         mass = read_names_url_txt(url_mass)
         data_mass = []
+        print('load file with velocity \t' + velocity)
 
         for mass_file in mass:  # read all file names in velocity for each kind of mass
             print('catchment mass \t' + mass_file)
