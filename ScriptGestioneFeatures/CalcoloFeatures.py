@@ -8,7 +8,7 @@ from statistics import *
 def calcolo_feature_statiche( file, mass_name):
     """in questo prendiamo il file txt lo spezziamo più volte in modo da leggere l'ultima colonna e calcolare la media e la
            deviazione standard, ritorniamo poi una tupla con i 3 elementi grammi,media,deviazione standard"""
-
+    std_deviations = []
     data = []
     for (i, element) in enumerate(file):
         if i > 5:

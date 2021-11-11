@@ -12,7 +12,6 @@ import PlotFilesData
 url = 'https://raw.githubusercontent.com/EdoGitMira/Progetto_Laboratorio_Misure_pesatura_dinamica/main/dati'
 url_name_velocity = 'https://raw.githubusercontent.com/EdoGitMira/Progetto_Laboratorio_Misure_pesatura_dinamica/main/dati/speed.txt'
 
-
 path_testo = Path(__file__).parent / "../dati/Features/Statiche"
 file_name = "0-FeaturePesiSatici.txt"
 complete_name = os.path.join(path_testo, file_name)
