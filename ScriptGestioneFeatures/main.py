@@ -45,6 +45,6 @@ if __name__ == '__main__':
 
     lista = PreparazioneFile.lista_features_statico(url, url_name_velocity)
     [masses, means, std_dev] = PreparazioneFile.file_reg(lista)
-    PlotFilesData.prepare_arrays(masses,means,std_dev)
+    PlotFilesData.prepare_arrays(masses, means, std_dev)
     intestazione = 'peso [g]' + '\t\t' + 'media [V]' + '\t\t' + 'std_dev [V]'
     scrittura_txt(lista, complete_name, intestazione)

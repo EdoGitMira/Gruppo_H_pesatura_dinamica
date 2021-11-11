@@ -5,38 +5,48 @@ from sklearn.metrics import mean_squared_error, r2_score
 import PreparazioneFile
 
 
-def prepare_arrays(diabetes_X, diabetes_y, std_dev = '0'):
+def prepare_arrays(masses_X, means_y, std_dev = '0'):
 
-    diabetes_X = np.array(diabetes_X)
-    diabetes_y = np.array(diabetes_y)
+    masses_X = np.array(masses_X)
+    means_y = np.array(means_y)
 
+    '''
+    
     # Split the data into training/testing sets
-    diabetes_X_train = diabetes_X[:-20]
-    diabetes_X_test = diabetes_X[-20:]
+    masses_X_train = masses_X[:-20]
+    masses_X_test = masses_X[-20:]
 
     # Split the targets into training/testing sets
-    diabetes_y_train = diabetes_y[:-20]
-    diabetes_y_test = diabetes_y[-20:]
+    means_y_train = means_y[:-20]
+    means_y_test = means_y[-20:]
+    
+    '''
 
     # Create linear regression object
     regr = linear_model.LinearRegression()
 
     # Train the model using the training sets
-    regr.fit(diabetes_X_train, diabetes_y_train)
+    regr.fit(masses_X, means_y)
 
     # Make predictions using the testing set
-    diabetes_y_pred = regr.predict(diabetes_X_test)
+    means_y_pred = regr.predict(masses_X)
+
+
+    reg_coeff = regr.coef_
+    mean_squared_er = mean_squared_error(means_y, means_y_pred)
+    det_coeff = r2_score(means_y, means_y_pred)
+
 
     # The coefficients
-    print("Coefficients: \n", regr.coef_)
+    print("Coefficients: \n", reg_coeff)
     # The mean squared error
-    print("Mean squared error: %.2f" % mean_squared_error(diabetes_y_test, diabetes_y_pred))
+    print("Mean squared error: %f" % mean_squared_er)
     # The coefficient of determination: 1 is perfect prediction
-    print("Coefficient of determination: %.2f" % r2_score(diabetes_y_test, diabetes_y_pred))
+    print("Coefficient of determination: %f" % det_coeff)
 
     # Plot outputs
-    plt.scatter(diabetes_X_test, diabetes_y_test, color="black")
-    plt.plot(diabetes_X_test, diabetes_y_pred, color="blue", linewidth=3)
+    plt.scatter(masses_X, means_y, color="black")
+    plt.plot(masses_X, means_y_pred, color="blue", linewidth=3)
 
     plt.xticks(())
     plt.yticks(())
