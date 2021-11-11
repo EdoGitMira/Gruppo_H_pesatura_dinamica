@@ -7,6 +7,7 @@
 import os
 from pathlib import Path
 import PreparazioneFile
+import PlotFilesData
 
 url = 'https://raw.githubusercontent.com/EdoGitMira/Progetto_Laboratorio_Misure_pesatura_dinamica/main/dati'
 url_name_velocity = 'https://raw.githubusercontent.com/EdoGitMira/Progetto_Laboratorio_Misure_pesatura_dinamica/main/dati/speed.txt'
@@ -37,8 +38,13 @@ def scrittura_txt(lista, nome_completo, intestazione=''):
 
     return None
 
+
+
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
+
     lista = PreparazioneFile.lista_features_statico(url, url_name_velocity)
+    [masses, means, std_dev] = PreparazioneFile.file_reg(lista)
+    PlotFilesData.prepare_arrays(masses,means,std_dev)
     intestazione = 'peso [g]' + '\t\t' + 'media [V]' + '\t\t' + 'std_dev [V]'
     scrittura_txt(lista, complete_name, intestazione)
