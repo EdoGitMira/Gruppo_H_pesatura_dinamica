@@ -2,6 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from sklearn import datasets, linear_model
 from sklearn.metrics import mean_squared_error, r2_score
+from sklearn.ensemble import IsolationForest
 import PreparazioneFile
 
 
@@ -22,6 +23,11 @@ def prepare_arrays(masses_X, means_y, std_dev = '0'):
     means_y_test = means_y[-20:]
     
     '''
+    iso = IsolationForest(contamination=0.5)
+    yhat = iso.fit_predict(masses_X)
+    # select all rows that are not outliers
+    mask = yhat != -1
+    masses_X, means_y = masses_X[mask, :], means_y[mask]
 
     # Create linear regression object
     regr = linear_model.LinearRegression()
