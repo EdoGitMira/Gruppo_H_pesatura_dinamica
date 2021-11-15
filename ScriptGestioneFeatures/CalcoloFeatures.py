@@ -54,7 +54,7 @@ def mean_of_means(lista):
 
         attuale = row[0]
         if attuale > (precedente + 0.2):
-            riga = [str(round(mean(list_mass), 1)), str(mean(list_mean)), str(stdev(list_mean))]
+            riga = [str(round(mean(list_mass), 2)), str(mean(list_mean)), str(stdev(list_mean))]
             lista_m_of_m.append(riga)
             list_mass.clear()
             list_mean.clear()
@@ -62,6 +62,8 @@ def mean_of_means(lista):
 
         list_mass.append(attuale)
         list_mean.append(row[1])
+
+    # manca la massa out of range di 1507
 
     return lista_m_of_m
 
