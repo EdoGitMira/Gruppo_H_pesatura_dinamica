@@ -25,3 +25,44 @@ def calcolo_feature_statiche( file, mass_name):
     riga = (str(mass_name), str(media), str(std_dev))
 
     return riga
+
+
+def sort_multiple_means(masses,means,std_dev):
+    '''questo metodo riceve in ingresso i tre vettori già separati di peso, media e std_dev
+    crea poi un unica lista con i tre elementi assieme e la ordina in ordine crescente di peso
+    e poi la ritorna'''
+    lista = [[masses[i],means[i],std_dev[i]] for i in range(len(masses))]
+    lista.sort()
+    return lista
+
+def mean_of_means(lista):
+    '''questo metodo riceve in ingresso la lista ordinara in ordine di peso crescente e calcola la media delle medie
+    dei valori presenti, e la media delle std_dev, ritorna una lista più corta che contiene solo il numero effettivo di pesi
+    non ripetuti, con rispettiva media e stddev'''
+
+    num_pesate = 10
+    list_mass = []
+    list_mean = []
+
+    lista_m_of_m = []
+    i = 1
+
+    precedente = lista[0][0]
+    attuale = lista[0][0]
+
+    for row in lista:
+
+        attuale = row[0]
+        if attuale > (precedente + 0.2):
+            riga = [str(round(mean(list_mass), 1)), str(mean(list_mean)), str(stdev(list_mean))]
+            lista_m_of_m.append(riga)
+            list_mass.clear()
+            list_mean.clear()
+            precedente = attuale
+
+        list_mass.append(attuale)
+        list_mean.append(row[1])
+
+    return lista_m_of_m
+
+

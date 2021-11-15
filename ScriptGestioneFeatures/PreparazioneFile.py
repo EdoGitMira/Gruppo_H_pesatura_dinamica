@@ -29,8 +29,6 @@ def lista_features_statico(url_repo, url_name):  # read all file from git hub an
         print("")
         data.append(data_mass)
 
-
-
     return data
 
 
@@ -42,7 +40,7 @@ def file_reg(lista):
 
     for val in lista:
        for dati in val:
-            mass.append([float(dati[0].split('-')[0])])
+            mass.append(float(dati[0].split('-')[0]))
             mean.append(float(dati[1]))
             std_deviations.append(float(dati[2]))
     return mass,mean,std_deviations
