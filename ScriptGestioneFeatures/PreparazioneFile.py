@@ -15,14 +15,14 @@ def lista_features_statico(url_repo, url_name):  # read all file from git hub an
     velocity_name = read_names_url_txt(url_name)
     data = []
     for velocity in velocity_name:  # read all file names velocity
-        url_mass = url_repo + '/v' + velocity + '/mass.txt'
+        url_mass = url_repo + '/' + velocity
         mass = read_names_url_txt(url_mass)
         data_mass = []
         print('load file with velocity \t' + velocity)
 
         for mass_file in mass:  # read all file names in velocity for each kind of mass
             print('catchment mass \t' + mass_file)
-            url_github = url_repo + '/v' + velocity + '/' + mass_file
+            url_github = url_mass+ '/' + mass_file
             row = calcolo_feature_statiche(urllib.request.urlopen(url_github), mass_file)
             data_mass.append(row)
 
