@@ -23,11 +23,11 @@ def prepare_arrays(masses_X, means_y, std_dev = '0'):
     means_y_test = means_y[-20:]
     
     '''
-    iso = IsolationForest(contamination=0.5)
-    yhat = iso.fit_predict(masses_X)
+    #iso = IsolationForest(contamination=0.5)
+    #yhat = iso.fit_predict(masses_X)
     # select all rows that are not outliers
-    mask = yhat != -1
-    masses_X, means_y = masses_X[mask, :], means_y[mask]
+    #mask = yhat != -1
+    #masses_X, means_y = masses_X[mask, :], means_y[mask]
 
     # Create linear regression object
     regr = linear_model.LinearRegression()
