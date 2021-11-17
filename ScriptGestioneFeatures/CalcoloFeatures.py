@@ -40,7 +40,6 @@ def mean_of_means(lista):
     dei valori presenti, e la media delle std_dev, ritorna una lista più corta che contiene solo il numero effettivo di pesi
     non ripetuti, con rispettiva media e stddev'''
 
-    num_pesate = 10
     list_mass = []
     list_mean = []
 
@@ -48,8 +47,6 @@ def mean_of_means(lista):
     i = 1
 
     precedente = lista[0][0]
-    attuale = lista[0][0]
-
     for row in lista:
 
         attuale = row[0]
