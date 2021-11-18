@@ -2,9 +2,6 @@ from math import *
 from statistics import *
 
 
-
-
-
 def calcolo_feature_statiche( file, mass_name):
     """in questo prendiamo il file txt lo spezziamo più volte in modo da leggere l'ultima colonna e calcolare la media e la
            deviazione standard, ritorniamo poi una tupla con i 3 elementi grammi,media,deviazione standard"""
@@ -14,7 +11,6 @@ def calcolo_feature_statiche( file, mass_name):
         if i > 5:
             element = element.decode('utf-8')
             row = element.split('\t')[1].split('\n')[0].split('E')
-
             number = float(row[0].replace(',', '.'))  # number without exponent
             exponent = int(row[1])  # exponent of number
 
@@ -50,7 +46,7 @@ def mean_of_means(lista):
     for row in lista:
 
         attuale = row[0]
-        if attuale > (precedente + 0.2):
+        if attuale > (precedente + 0.2) or attuale == lista[-1]:
             riga = [str(round(mean(list_mass), 2)), str(mean(list_mean)), str(stdev(list_mean))]
             lista_m_of_m.append(riga)
             list_mass.clear()
