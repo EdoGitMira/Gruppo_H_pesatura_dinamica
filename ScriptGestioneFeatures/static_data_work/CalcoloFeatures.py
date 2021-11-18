@@ -46,7 +46,7 @@ def mean_of_means(lista):
     for row in lista:
 
         attuale = row[0]
-        if attuale > (precedente + 0.2):
+        if attuale > (precedente + 0.2) or attuale == lista[-1]:
             riga = [str(round(mean(list_mass), 2)), str(mean(list_mean)), str(stdev(list_mean))]
             lista_m_of_m.append(riga)
             list_mass.clear()
