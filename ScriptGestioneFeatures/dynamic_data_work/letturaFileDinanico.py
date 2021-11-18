@@ -1,7 +1,12 @@
+import os
 import urllib
 from urllib import request
+import pandas as pd
+from pathlib import Path
 
-
+# legge il file txt con telimitatore il Tab ma i dati sono comunque delle stringhe e non numeri.
+celle = pd.read_csv('146.3-11-11-13-17-59.txt',sep='\t')
+print('c')
 
 def read_names_url_txt(url):
     names = []
@@ -11,14 +16,14 @@ def read_names_url_txt(url):
 
 
 def lista_features_dinamico(url_repo, url_name):  # read all file from git hub and calculate the feature static
-    '''VA CORRETTO'''
+
     velocity_name = read_names_url_txt(url_name)
     data = []
 
     for i in range(1,len(velocity_name)):  # read all file names velocity
         url_mass = url_repo + '/' + velocity_name[i] + '/mass.txt'
         mass = read_names_url_txt(url_mass)
-        data_mass = []
+
         print('load file with velocity \t' + velocity_name[i])
 
         for mass_file in mass:  # read all file names in velocity for each kind of mass
@@ -35,6 +40,7 @@ def lista_features_dinamico(url_repo, url_name):  # read all file from git hub a
 def creazione_numeri_dinamici(file, mass_name):
     """in questo prendiamo il file txt lo spezziamo più volte in modo da leggere tutti i dati dinmici, massa, FC1, FC2 e massa filtrata,  ritorna
     i 4 valori letti """
+    tempo = []
     masses = []
     FC1s = []
     FC2s = []
@@ -46,13 +52,13 @@ def creazione_numeri_dinamici(file, mass_name):
             element = element.decode('utf-8')
             for index in range(1,5):
                 data[index] = crea_numero(element,index)
-
+            tempo.append(0.000620 * (i-5))
             masses.append(data[1])
             FC1s.append(data[2])
             FC2s.append(data[3])
             masses_filt.append(data[4])
 
-    lista = [masses,FC1s,FC2s,masses_filt]
+    lista = [tempo,masses,FC1s,FC2s,masses_filt]
 
     return lista
 
