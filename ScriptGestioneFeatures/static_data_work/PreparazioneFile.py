@@ -6,6 +6,7 @@ from pathlib import Path
 from urllib import request
 from CalcoloFeatures import *
 
+
 url = 'https://raw.githubusercontent.com/EdoGitMira/Progetto_Laboratorio_Misure_pesatura_dinamica/main/dati/Features/Statiche/0-FeaturePesiSatici.txt'
 
 
