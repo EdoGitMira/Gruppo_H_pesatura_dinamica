@@ -1,0 +1,4 @@
+abbiamo misurato i pesi considerando un minimo di isteresi
+controlliamo già al momento di acquisizione gli outlier
+in base a come li si gira variano di 5 centesimi
+ci sono state variazioni sistematiche di +-4/3 centesimi
