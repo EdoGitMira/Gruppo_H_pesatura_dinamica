@@ -9,5 +9,5 @@ path_testo = Path(__file__).parent / "../dati/Features/Statiche"
 
 if __name__ == '__main__':
     lista = lista_features_dinamico(url,url_name_velocity)
-
+    lista = np.array(lista)
     print(lista)
