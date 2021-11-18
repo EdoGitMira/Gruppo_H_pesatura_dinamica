@@ -1,6 +1,8 @@
 import urllib
 from urllib import request
 
+
+
 def read_names_url_txt(url):
     names = []
     for element in urllib.request.urlopen(url):
@@ -39,15 +41,17 @@ def creazione_numeri_dinamici(file, mass_name):
     masses_filt = []
     data = [0,0,0,0,0]
     for (i, element) in enumerate(file):
+
         if i > 4:
             element = element.decode('utf-8')
             for index in range(1,5):
                 data[index] = crea_numero(element,index)
 
-    masses.append(data[1])
-    FC1s.append(data[2])
-    FC2s.append(data[3])
-    masses_filt.append(data[4])
+            masses.append(data[1])
+            FC1s.append(data[2])
+            FC2s.append(data[3])
+            masses_filt.append(data[4])
+
     lista = [masses,FC1s,FC2s,masses_filt]
 
     return lista
