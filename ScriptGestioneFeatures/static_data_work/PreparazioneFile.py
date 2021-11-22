@@ -15,8 +15,8 @@ url = 'https://raw.githubusercontent.com/EdoGitMira/Progetto_Laboratorio_Misure_
 def lista_features_statico(url_repo, url_name):  # read all file from git hub and calculate the feature static
     velocity_name = read_names_url_txt(url_name)
     data = []
-    mass_for_reg = []
-    value_for_reg = []
+    volt_for_reg = []
+    g_for_reg = []
 
     for velocity in velocity_name:  # read all file names velocity
         url_mass = url_repo + '/' + velocity + '/mass.txt'
@@ -27,13 +27,14 @@ def lista_features_statico(url_repo, url_name):  # read all file from git hub an
         for mass_file in mass:  # read all file names in velocity for each kind of mass
             print('catchment mass \t' + mass_file)
             url_github = url_repo + '/' + velocity + '/' + mass_file
-            [row,samples,mass_name] = calcolo_feature_statiche(urllib.request.urlopen(url_github), mass_file)
+            [row,grammi,volt] = calcolo_feature_statiche(urllib.request.urlopen(url_github), mass_file)
             data_mass.append(row)
-            mass_for_reg.append(mass_name)
-            value_for_reg.append(value_for_reg)
+            volt_for_reg = volt_for_reg + volt
+            g_for_reg = g_for_reg + grammi
         print("")
         data.append(data_mass)
-    return data,mass_for_reg,value_for_reg
+
+    return data, g_for_reg, volt_for_reg
 
 
 

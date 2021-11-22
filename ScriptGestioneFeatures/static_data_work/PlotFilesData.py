@@ -8,7 +8,7 @@ import PreparazioneFile
 
 def prepare_arrays(masses_X, masses_value_y, std_dev = '0'):
 
-    #masses_X = [[masses_X[i]] for i in range(len(masses_X))]
+    masses_X = [[masses_X[i]] for i in range(len(masses_X))]
 
     masses_X = np.array(masses_X)
     masses_value_y = np.array(masses_value_y)
