@@ -1,3 +1,4 @@
+from random import *
 from math import *
 from statistics import *
 
@@ -20,8 +21,20 @@ def calcolo_feature_statiche( file, mass_name):
     std_dev = stdev(data)
     riga = (str(mass_name), str(media), str(std_dev))
 
-    return riga
+    n = 50
+    samples = random_samples(data, n)
+    mass_list = [mass_name for i in range(n)]
 
+    return riga,samples,mass_list
+
+
+def random_samples(lista,n):
+    '''mischia la lista e ne ritorna una fetta inziale di n elementi dato come parametro'''
+
+    shuffle(lista)
+    samples = lista[:n]
+
+    return samples
 
 def sort_multiple_means(masses,means,std_dev):
     '''questo metodo riceve in ingresso i tre vettori già separati di peso, media e std_dev
