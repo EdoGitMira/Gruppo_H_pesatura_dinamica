@@ -4,7 +4,7 @@ from statistics import *
 
 
 
-def calcolo_feature_statiche( file, mass_name):
+def calcolo_feature_statiche(file, mass_name = 0):
     """in questo prendiamo il file txt lo spezziamo più volte in modo da leggere l'ultima colonna e calcolare la media e la
            deviazione standard, ritorniamo poi una tupla con i 3 elementi grammi,media,deviazione standard, in più ritorna pure
            il 2 vettori con i grammi e il valore in volt di campioni per la taratura"""
