@@ -2,8 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from sklearn import datasets, linear_model
 from sklearn.metrics import mean_squared_error, r2_score
-from sklearn.ensemble import IsolationForest
-import PreparazioneFile
+from math import *
 
 
 def prepare_arrays(masses_X, masses_value_y, std_dev = '0'):
@@ -35,22 +34,27 @@ def prepare_arrays(masses_X, masses_value_y, std_dev = '0'):
 
 
     reg_coeff = regr.coef_
-    mean_squared_er = mean_squared_error(masses_value_y, means_y_pred)
-    det_coeff = r2_score(masses_value_y, means_y_pred)
+    mean_squared_er = round(mean_squared_error(masses_value_y, means_y_pred),20)
+    dev_std = sqrt(mean_squared_er)
+    det_coeff = round(r2_score(masses_value_y, means_y_pred),20)
 
 
     # The coefficients
     print("Coefficients: \n", reg_coeff)
     # The mean squared error
-    print("Mean squared error: %f" % mean_squared_er)
+    print(f"Mean squared error: {mean_squared_er}" )
+    print(f"stddev: {dev_std}" )
     # The coefficient of determination: 1 is perfect prediction
-    print("Coefficient of determination: %f" % det_coeff)
+    print(f"Coefficient of determination: {det_coeff}" )
 
     # Plot outputs
     plt.scatter(masses_X, masses_value_y, color="black")
     plt.plot(masses_X, means_y_pred, color="blue", linewidth=3)
 
-    plt.xticks(())
-    plt.yticks(())
+    #plt.xticks()
+    #plt.yticks()
 
+    plt.xlabel('grams')
+    plt.ylabel('Voltage')
+    plt.title('Taratura Statica')
     plt.show()
