@@ -1,10 +1,14 @@
+from random import *
 from math import *
 from statistics import *
 
 
+
 def calcolo_feature_statiche( file, mass_name):
     """in questo prendiamo il file txt lo spezziamo più volte in modo da leggere l'ultima colonna e calcolare la media e la
-           deviazione standard, ritorniamo poi una tupla con i 3 elementi grammi,media,deviazione standard"""
+           deviazione standard, ritorniamo poi una tupla con i 3 elementi grammi,media,deviazione standard, in più ritorna pure
+           il 2 vettori con i grammi e il valore in volt di campioni per la taratura"""
+
     std_deviations = []
     data = []
     for (i, element) in enumerate(file):
@@ -20,8 +24,21 @@ def calcolo_feature_statiche( file, mass_name):
     std_dev = stdev(data)
     riga = (str(mass_name), str(media), str(std_dev))
 
-    return riga
+    n = 10
+    samples = random_samples(data, n)
+    gram = round(float(mass_name.split('-')[0]),2)
+    mass_list = [gram for _ in range(n)]
 
+    return riga,mass_list,samples
+
+
+def random_samples(lista,n):
+    '''mischia la lista e ne ritorna una fetta inziale di n elementi dato come parametro'''
+
+    shuffle(lista)
+    samples = lista[:n]
+
+    return samples
 
 def sort_multiple_means(masses,means,std_dev):
     '''questo metodo riceve in ingresso i tre vettori già separati di peso, media e std_dev
@@ -55,8 +72,6 @@ def mean_of_means(lista):
 
         list_mass.append(attuale)
         list_mean.append(row[1])
-
-    # manca la massa out of range di 1507
 
     return lista_m_of_m
 
