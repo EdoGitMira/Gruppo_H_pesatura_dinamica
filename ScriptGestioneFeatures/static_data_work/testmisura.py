@@ -36,6 +36,16 @@ def write_csv_txt(lista,path = 'dati_Prove/medieMobili',_delimeter='\n',_header=
     np.savetxt(pathtxt, lista, delimiter=_delimeter, header=_header)
     np.savetxt(pathcsv, lista, delimiter=_delimeter, header=_header)
 
+voltage = lettura_file('dati_Prove/test1-26-11-09-29-00.csv')
+voltage1 = lettura_file('dati_Prove/1081.74-26-11-10-45-24.csv')
+N = 60000
+mobile = medie_mobili(voltage,N)
+mobile1 = medie_mobili(voltage1,N)
+
+plot_data(mobile)
+plot_data(mobile1)
+
+'''
 path_prima = 'dati_Prove/146.59-25-11-09-40-32.csv'
 path_dopo = 'dati_Prove/146.59-25-11-09-46-34.csv'
 N = 6000
@@ -54,7 +64,6 @@ lista_prima = [media_prima,std_dev_prima]
 lista_dopo = [media_dopo,std_dev_dopo]
 dati = [lista_prima,lista_dopo]
 write_csv_txt(dati,nome,_delimeter='\t')
-
-
+'''
 
 
