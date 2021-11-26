@@ -1,3 +1,5 @@
+import os
+from path import Path
 from CalcoloFeatures import *
 from math import *
 import pandas as pd
@@ -5,29 +7,53 @@ from matplotlib import pyplot as plt
 import numpy as np
 
 
-url = 'https://raw.githubusercontent.com/EdoGitMira/Progetto_Laboratorio_Misure_pesatura_dinamica/main/dati'
-url_name_velocity = 'https://raw.githubusercontent.com/EdoGitMira/Progetto_Laboratorio_Misure_pesatura_dinamica/main/dati/speed.txt'
+def lettura_file(path='dati_Prove/test-25-11-13-41-26.csv',delimeter=';'):
+    '''Legge il file e ritorna un numpy array
+    di una sola colonna con i valori acquisiti
+    :returns LISTA_Voltage
+    '''
+    f = pd.read_csv(path, delimiter = delimeter)
+    f['Bridge'] = [x.replace(',', '.') for x in f['Bridge']]
+    voltage = f.Bridge.to_list()
+    voltage = voltage[3:]
+    voltage = np.float_(voltage)
+    return voltage
 
+def medie_mobili(voltage,N):
+    '''calcola la media mobile su N dati del file passato, ritorna un numpy array
+    di una sola colonna con le media mobile
+    :returns LISTA_MEDIE'''
+    return np.convolve(voltage, np.ones(N) / N, mode='valid')
 
+def plot_data(lista,title = 'media_mobile'):
+    plt.plot(lista)
+    plt.show()
+    plt.title(title)
 
-def medieTemporalei(voltage, n):
-    list_div = [mean(voltage[i * n:(i + 1) * n]) for i in range((len(voltage) + n - 1) // n)]
-    return list_div
+def write_csv_txt(lista,path = 'dati_Prove/medieMobili',_delimeter='\n',_header='Media Mobile su 30sec'):
+    pathtxt = path + '.txt'
+    pathcsv = path + '.csv'
+    np.savetxt(pathtxt, lista, delimiter=_delimeter, header=_header)
+    np.savetxt(pathcsv, lista, delimiter=_delimeter, header=_header)
 
-f = pd.read_csv('348.06-25-11-11-59-09.csv',delimiter=';')
-f['Bridge'] = [x.replace(',', '.') for x in f['Bridge']]
+path_prima = 'dati_Prove/146.59-25-11-09-40-32.csv'
+path_dopo = 'dati_Prove/146.59-25-11-09-46-34.csv'
+N = 6000
 
-voltage = f.Bridge.to_list()
-voltage = voltage[3:]
-voltage = np.float_(voltage)
-N = 60000
-lista_medie = np.convolve(voltage, np.ones(N)/N, mode='valid')
+voltage_prima = lettura_file(path_prima)
+voltage_dopo = lettura_file(path_dopo)
 
-#lista_medie = medieTemporalei(voltage,n)
+media_prima = mean(voltage_prima)
+media_dopo = mean(voltage_dopo)
+std_dev_prima= stdev(voltage_prima)
+std_dev_dopo = stdev(voltage_dopo)
 
-plt.plot(lista_medie)
-plt.show()
-plt.title('media mobile')
+nome = 'dati_Prove/146.59 Media'
+
+lista_prima = [media_prima,std_dev_prima]
+lista_dopo = [media_dopo,std_dev_dopo]
+dati = [lista_prima,lista_dopo]
+write_csv_txt(dati,nome,_delimeter='\t')
 
 
 
