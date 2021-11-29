@@ -59,12 +59,11 @@ def mean_of_means(lista):
 
     lista_m_of_m = []
     i = 1
-
     precedente = lista[0][0]
     for row in lista:
 
         attuale = row[0]
-        if attuale > (precedente + 0.2) or attuale == lista[-1]:
+        if attuale > (precedente + 0.2) or i == len(lista):
             riga = [str(round(mean(list_mass), 2)), str(mean(list_mean)), str(stdev(list_mean))]
             lista_m_of_m.append(riga)
             list_mass.clear()
@@ -73,7 +72,7 @@ def mean_of_means(lista):
 
         list_mass.append(attuale)
         list_mean.append(row[1])
-
+        i += 1
     return lista_m_of_m
 
 def histograms(lista):
@@ -87,18 +86,17 @@ def histograms(lista):
     i = 1
     cartella = './istogrammi/'
     precedente = lista[0][0]
+    i = 1
     for row in lista:
-
         attuale = row[0]
-        if attuale > (precedente + 0.2) or attuale == lista[-1]:
+        if attuale > (precedente + 0.2) or i == len(lista):
             save_plot_histogram(list_mean,precedente,cartella)
             list_mass.clear()
             list_mean.clear()
             precedente = attuale
-
         list_mass.append(attuale)
         list_mean.append(row[1])
-
+        i += 1
     return lista_m_of_m
 
 def save_plot_histogram(lista,massa,cartella='istogrammi/'):
@@ -107,4 +105,4 @@ def save_plot_histogram(lista,massa,cartella='istogrammi/'):
     plt.title(f'Istogramma - medie = {massa}g')
     path = f'{cartella}{massa}g.jpg';
     plt.savefig(path)
-    #plt.show()
+    plt.show()

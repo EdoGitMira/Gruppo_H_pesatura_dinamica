@@ -7,18 +7,6 @@ from matplotlib import pyplot as plt
 import numpy as np
 
 
-def lettura_file(path='dati_Prove/test-25-11-13-41-26.csv',delimeter=';'):
-    '''Legge il file e ritorna un numpy array
-    di una sola colonna con i valori acquisiti
-    :returns LISTA_Voltage
-    '''
-    f = pd.read_csv(path, delimiter = delimeter)
-    f['Bridge'] = [x.replace(',', '.') for x in f['Bridge']]
-    voltage = f.Bridge.to_list()
-    voltage = voltage[3:]
-    voltage = np.float_(voltage)
-    return voltage
-
 def splpit_pandas(f,column,n):
     f[column] = [x.replace(',', '.') for x in f[column]]
     l = f[column].tolist()
@@ -66,11 +54,13 @@ def write_csv_txt(lista,path = 'dati_Prove/medieMobili',_delimeter='\n',_header=
     np.savetxt(pathtxt, lista, delimiter=_delimeter, header=_header)
     np.savetxt(pathcsv, lista, delimiter=_delimeter, header=_header)
 
+
 n = 6
 path_dati = 'dati_Prove/prova_temp-29-11-14-06-15.csv'
 l = lettura_file_N(path_dati,n,';')
 plot_data(l[0],'Cella di Carico','peso.jpg')
 plot_multiple_data(l[1:],'Temperature',['env','cell'],'tCells.jpg')
+
 
 '''
 voltage = lettura_file('dati_Prove/test1-26-11-09-29-00.csv')
