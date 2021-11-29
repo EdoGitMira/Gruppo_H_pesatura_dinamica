@@ -103,6 +103,6 @@ def save_plot_histogram(lista,massa,cartella='istogrammi/'):
 
     plt.hist(lista)
     plt.title(f'Istogramma - medie = {massa}g')
-    path = f'{cartella}{massa}g.jpg';
-    plt.savefig(path)
+    #path = f'{cartella}{massa}g.jpg';
+    #plt.savefig(path)
     plt.show()
