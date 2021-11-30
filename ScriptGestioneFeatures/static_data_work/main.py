@@ -63,7 +63,7 @@ if __name__ == '__main__':
     #scrittura_txt(lista, complete_name, intestazione)
 
 
-    ordered_list = CalcoloFeatures.sort_multiple_means(masses, means, std_dev)
-    CalcoloFeatures.histograms(ordered_list)
+    #ordered_list = CalcoloFeatures.sort_multiple_means(masses, means, std_dev)
+    #CalcoloFeatures.histograms(ordered_list)
     #list_means_of_means = CalcoloFeatures.mean_of_means(ordered_list)
     #scrittura_txt_m_o_m(list_means_of_means ,complete_name_m_o_m ,intestazione)

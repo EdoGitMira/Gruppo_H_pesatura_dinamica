@@ -22,18 +22,10 @@ def plot_data(lista):
     plt.show()
 
 
-
-def lista_features_dinamico(url_repo, url_name):  # read all file from git hub and calculate the feature static
-    lista = creazione_numeri_dinamici(urllib.request.urlopen('https://raw.githubusercontent.com/EdoGitMira/Progetto_Laboratorio_Misure_pesatura_dinamica/main/dati/v1_45m-min_280/1081.74/1081.74-26-11-10-34-41.txt'),'1081-4.txt')
-    return lista
-
-'''bisogna fare delle modifiche nella lettura ha smesso di funzionare correttamente'''
-
-
 if __name__ == '__main__':
 
     #celle = pd.read_csv('1225.95-26-11-11-16-40.txt', sep='\t')
-    lista = lista_features_dinamico(0,0)
+    lista = lista_features_dinamico(url,url_name_velocity)
     plot_data(lista)
     #lista = lista_features_dinamico(url, url_name_velocity)
     [l_piccola,l_grande,l_no_dim,salita,discesa] = split_list(lista)
