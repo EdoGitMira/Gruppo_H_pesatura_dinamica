@@ -17,19 +17,24 @@ def lista_features_dinamico(url_repo, url_name):  # read all file from git hub a
     velocity_name = read_names_url_txt(url_name)
     data = []
     lista = []
-    for i in range(1,len(velocity_name)):  # read all file names velocity
-        url_mass = url_repo + '/' + velocity_name[i] + '/mass.txt'
-        mass = read_names_url_txt(url_mass)
+    for velocity in velocity_name:  # read all file names velocity
+        url_cartella = url_repo + '/' + velocity + '/cartelle.txt'
+        cartella = read_names_url_txt(url_cartella)
 
-        print('load file with velocity \t' + velocity_name[i])
+        print('load file with velocity \t' + velocity)
 
-        for mass_file in mass:  # read all file names in velocity for each kind of mass
-            print('catchment mass \t' + mass_file)
-            url_github = url_repo + '/' + velocity_name[i] + '/' + mass_file
-            lista = creazione_numeri_dinamici(urllib.request.urlopen(url_github), mass_file)
+        for mass_folder in cartella:  # read all file names in velocity for each kind of mass
+            print('catchment mass \t' + mass_folder)
+            url_mass = url_repo + '/' + velocity + '/' + mass_folder
+            mass = read_names_url_txt(url_mass)
 
-        print("")
-        data.append(lista)
+            for mass_file in mass:
+                url_github = url_mass + '/' + mass_file
+                lista = creazione_numeri_dinamici(urllib.request.urlopen(url_github), mass_folder)
+
+            print("")
+            data.append(lista)
+
     return lista
 
 
