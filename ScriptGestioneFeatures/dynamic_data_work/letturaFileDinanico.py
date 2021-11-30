@@ -4,9 +4,6 @@ from urllib import request
 import pandas as pd
 from pathlib import Path
 
-# legge il file txt con telimitatore il Tab ma i dati sono comunque delle stringhe e non numeri.
-celle = pd.read_csv('1225.95-26-11-11-16-40.txt',sep='\t')
-print('c')
 
 def read_names_url_txt(url):
     names = []
