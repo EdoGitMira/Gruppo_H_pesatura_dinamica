@@ -22,11 +22,12 @@ def lettura_file_N(path,n,delimeter=';'):
     f = pd.read_csv(path, delimiter = delimeter)
     i = 0
     for column in f.columns:
-        if i > 0:
+        if i == 1:
             a = splpit_pandas(f,column,n)
             l.append(a)
         i += 1
     return l
+
 
 def medie_mobili(voltage,N):
     '''calcola la media mobile su N dati del file passato, ritorna un numpy array
@@ -56,10 +57,12 @@ def write_csv_txt(lista,path = 'dati_Prove/medieMobili',_delimeter='\n',_header=
 
 
 n = 6
-path_dati = 'dati_Prove/prova_temp-29-11-14-06-15.csv'
+path_dati = 'dati_Prove/0_portaAperta-30-11-18-46-06.csv'
 l = lettura_file_N(path_dati,n,';')
-plot_data(l[0],'Cella di Carico','peso.jpg')
-plot_multiple_data(l[1:],'Temperature',['env','cell'],'tCells.jpg')
+plot_data(l,'Cella di Carico','peso.jpg')
+N = 60000
+mobile = medie_mobili(l,N)
+#plot_multiple_data(l[1:],'Temperature',['env','cell'],'tCells.jpg')
 
 
 '''
