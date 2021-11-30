@@ -10,8 +10,6 @@ from CalcoloFeatures import *
 url = 'https://raw.githubusercontent.com/EdoGitMira/Progetto_Laboratorio_Misure_pesatura_dinamica/main/dati/Features/Statiche/0-FeaturePesiSatici.txt'
 
 
-
-
 def lista_features_statico(url_repo, url_name):  # read all file from git hub and calculate the feature static
     velocity_name = read_names_url_txt(url_name)
     data = []

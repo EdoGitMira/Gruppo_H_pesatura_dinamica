@@ -7,17 +7,26 @@ from matplotlib import pyplot as plt
 import numpy as np
 
 
-def lettura_file(path='dati_Prove/test-25-11-13-41-26.csv',delimeter=';'):
+def splpit_pandas(f,column,n):
+    f[column] = [x.replace(',', '.') for x in f[column]]
+    l = f[column].tolist()
+    l = l[n:]
+    l = np.float_(l)
+    return l
+
+def lettura_file_N(path,n,delimeter=';'):
     '''Legge il file e ritorna un numpy array
-    di una sola colonna con i valori acquisiti
-    :returns LISTA_Voltage
+    :returns LISTA
     '''
+    l = []
     f = pd.read_csv(path, delimiter = delimeter)
-    f['Bridge'] = [x.replace(',', '.') for x in f['Bridge']]
-    voltage = f.Bridge.to_list()
-    voltage = voltage[3:]
-    voltage = np.float_(voltage)
-    return voltage
+    i = 0
+    for column in f.columns:
+        if i > 0:
+            a = splpit_pandas(f,column,n)
+            l.append(a)
+        i += 1
+    return l
 
 def medie_mobili(voltage,N):
     '''calcola la media mobile su N dati del file passato, ritorna un numpy array
@@ -25,10 +34,19 @@ def medie_mobili(voltage,N):
     :returns LISTA_MEDIE'''
     return np.convolve(voltage, np.ones(N) / N, mode='valid')
 
-def plot_data(lista,title = 'media_mobile'):
+def plot_data(lista,title,path):
     plt.plot(lista)
-    plt.show()
     plt.title(title)
+    plt.savefig(path)
+    plt.show()
+
+def plot_multiple_data(lista,title,legend,path):
+    for i in lista:
+        plt.plot(i)
+    plt.title(title)
+    plt.savefig(path)
+    plt.show()
+
 
 def write_csv_txt(lista,path = 'dati_Prove/medieMobili',_delimeter='\n',_header='Media Mobile su 30sec'):
     pathtxt = path + '.txt'
@@ -36,6 +54,15 @@ def write_csv_txt(lista,path = 'dati_Prove/medieMobili',_delimeter='\n',_header=
     np.savetxt(pathtxt, lista, delimiter=_delimeter, header=_header)
     np.savetxt(pathcsv, lista, delimiter=_delimeter, header=_header)
 
+
+n = 6
+path_dati = 'dati_Prove/prova_temp-29-11-14-06-15.csv'
+l = lettura_file_N(path_dati,n,';')
+plot_data(l[0],'Cella di Carico','peso.jpg')
+plot_multiple_data(l[1:],'Temperature',['env','cell'],'tCells.jpg')
+
+
+'''
 voltage = lettura_file('dati_Prove/test1-26-11-09-29-00.csv')
 voltage1 = lettura_file('dati_Prove/1081.74-26-11-10-45-24.csv')
 N = 60000
@@ -44,6 +71,9 @@ mobile1 = medie_mobili(voltage1,N)
 
 plot_data(mobile)
 plot_data(mobile1)
+'''
+
+
 
 '''
 path_prima = 'dati_Prove/146.59-25-11-09-40-32.csv'
