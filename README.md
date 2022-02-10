@@ -6,7 +6,9 @@ Per avere più informazioni sul progetto e sul codice scannerizzare il codice QR
 
 ## REPO CODICE
 
-| <a href="https://github.com/marco-milanesi/dynamic-weighing" target="_blank">**Machine Learning**</a> | <a href="https://github.com/EdoGitMira/Progetto_Laboratorio_Misure_pesatura_dinamica_script" target="_blank">**Estrazione Feature**</a> |
+<a href="https://github.com/marco-milanesi/dynamic-weighing" target="_blank">**Machine Learning**</a> 
+
+<a href="https://github.com/EdoGitMira/Progetto_Laboratorio_Misure_pesatura_dinamica_script" target="_blank">**Estrazione Feature**</a> 
 
 ## TEAM
 |**Gioavnni Alghisi**|**Francesco Campregher**|**Marco Milanesi** | **Edoardo Mirandola** | **Abdelghani Msaad**|
