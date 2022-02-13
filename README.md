@@ -1,8 +1,6 @@
 # Acquisizione tramite Labview
 > Identificazione del peso tramite algoritmi di Machine Learning
 
-<<<<<<< HEAD
-=======
 L'individuazione del peso in maniera dinamica è un'applicazione attuabile in qualsiasi linea produttiva. Esso consente non solo di aumentare i ritmi produttivi evitando tempi morti, ma anche avere un costante controllo sulla massa dei pezzi prodotti. Scopo di questo progetto è lo sviluppo di un sistema predittivo per il calcolo del peso mediante tecniche di Machine Learning. A partire dai dati della cella di carico tramite un regressore lineare è possibile stimare il peso sul nastro trasportatore. 
 
 ![](README_Images/MisureIndustriali.png)
@@ -56,5 +54,5 @@ dove ![](https://latex.codecogs.com/svg.latex?&space;y) rappresenta il peso pred
 |**Gioavnni Alghisi**|**Francesco Campregher**|**Marco Milanesi** | **Edoardo Mirandola** | **Abdelghani Msaad**|
 | :---: |:---:|:---:|:---:|:---:|
 |g.alghisi002@studenti.unibs.it|f.campregher@studenti.unibs.it|m.milanesi004@studenti.unibs.it|e.mirandola@studenti.unibs.it|a.msaad@studenti.unibs.it|
->>>>>>> d3f7dcdfca28938ba3e4d4aeea88eac4d882f565
+
 
