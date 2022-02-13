@@ -23,15 +23,15 @@ L'individuazione del peso in maniera dinamica è un'applicazione attuabile in qu
 ## Strumentazione
 La strumentazione utilizzata è la seguente:
 - **Nastro trasportatore** del Laboratorio MMTLab;
-- **Fotocellule:** Sick GL6
-- **Cella di carico** HBM PW22C3 con fondo scala di *10 kg*
+- <a href="https://github.com/EdoGitMira/Gruppo_H_pesatura_dinamica/blob/main/datasheet/dataSheet_GL6-P4211_1059241_it.pdf" target="_blank">**Sick GL6**</a>
+- <a href="https://github.com/EdoGitMira/Gruppo_H_pesatura_dinamica/blob/main/datasheet/pw_22_data_sheet%20(3).pdf" target="_blank">**Cella di carico**</a> HBM PW22C3 con fondo scala di *10 kg*
 - **Termoresistenze** PT100
 - **Schede di acquisizione** rack CompactDAq
-  - NI 9237 -> cella di carico  
-  - NI 9215 -> fotocellule 
-  - NI 9219 -> termoresistenze
+  - <a href="https://github.com/EdoGitMira/Gruppo_H_pesatura_dinamica/blob/main/datasheet/NI_9237.pdf" target="_blank">**NI 9237**</a> cella di carico  
+  - <a href="https://github.com/EdoGitMira/Gruppo_H_pesatura_dinamica/blob/main/datasheet/NI_9215.pdf" target="_blank">**NI 9215**</a> -> fotocellule 
+  - <a href="https://github.com/EdoGitMira/Gruppo_H_pesatura_dinamica/blob/main/datasheet/NI_9219.pdf" target="_blank">**NI 9219**</a> -> termoresistenze
 
-> I datasheet del seguente hardaware è presente nella seguente <a href="https://github.com/EdoGitMira/Gruppo_H_pesatura_dinamica/tree/main/datasheet" target="_blank">**cartella**</a> all'interno della repository.
+
 
 ## Taratura-Acquisizione
 Per caratterizzare il comportamento del sistema di misura sono state svolte tre fasi:
