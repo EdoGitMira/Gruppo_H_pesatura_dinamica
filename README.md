@@ -1,5 +1,5 @@
 # Pesatura Dinamica
-> Stima del peso tramite algoritmi di Machine Learning
+> Identificazione del peso tramite algoritmi di Machine Learning
 
 L'individuazione del peso in maniera dinamica è un'applicazione attuabile in qualsiasi linea produttiva. Esso consente non solo di aumentare i ritmi produttivi evitando tempi morti, ma anche avere un costante controllo sulla massa dei pezzi prodotti. Scopo di questo progetto è lo sviluppo di un sistema predittivo per il calcolo del peso mediante tecniche di Machine Learning. A partire dai dati della cella di carico tramite un regressore lineare è possibile stimare il peso sul nastro trasportatore. 
 
@@ -37,6 +37,11 @@ Per caratterizzare il comportamento del sistema di misura sono state svolte tre 
 
 
 ## Pre-Procesing ed estrazione features
+I dati acquisiti mediante LabView vengono pre-processati tramite un filtro a 100 Hz; successivamente vengo analizzati, suddivisi in blocchi uniformi e caricati su un archivio Github reperibile al seguente <a href="https://github.com/EdoGitMira/Gruppo_H_pesatura_dinamica/tree/main/Dati%20grezzie" target="_blank">**link**</a>.
+Il dataset è costituito da:
+-**label:** il valore assunto vero ricavato dalle prove di statica iniziale e finale del carico mediante una media a indici ponderati
+-**features:** consistono in N medie calcolate su N intervalli nel tratto utile del segnale 
+Il dataset utilizzati per lo svolgimento del progetto sono reperibili alla seguente <a href="https://github.com/EdoGitMira/Gruppo_H_pesatura_dinamica/tree/main/dataset" target="_blank">**cartella**</a>
 
 ## Stima del peso tramite regressore Lineare
 Lo sviluppo dell’algoritmo di identificazione del peso`e statoeffettuato tramite regressore lineare implementato con l’utilizzodel pacchetto *scikit-learn*. La  regressione è  stata  effettuata  partendo  dal  segnale  pre-processato e calcolando poi il valore del peso in V/V. 
