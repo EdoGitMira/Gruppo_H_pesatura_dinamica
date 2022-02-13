@@ -1,5 +1,5 @@
 # Pesatura Dinamica
-> Identificazione del peso tramite algoritmi di Machine Learning
+> Stima del peso tramite algoritmi di Machine Learning
 
 L'individuazione del peso in maniera dinamica è un'applicazione attuabile in qualsiasi linea produttiva. Esso consente non solo di aumentare i ritmi produttivi evitando tempi morti, ma anche avere un costante controllo sulla massa dei pezzi prodotti. Scopo di questo progetto è lo sviluppo di un sistema predittivo per il calcolo del peso mediante tecniche di Machine Learning. A partire dai dati della cella di carico tramite un regressore lineare è possibile stimare il peso sul nastro trasportatore. 
 
