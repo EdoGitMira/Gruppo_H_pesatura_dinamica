@@ -24,8 +24,12 @@ L'individuazione del peso in maniera dinamica è un'applicazione attuabile in qu
 La strumentazione utilizzata è la seguente:
 - **Nastro trasportatore** del Laboratorio MMTLab;
 - **Fotocellule:** Sick GL6
-- **Schede di acquisizione** NI DAQ;
 - **Cella di carico** HBM PW22C3 con fondo scala di *10 kg*
+- **Termoresistenze** PT100
+- **Schede di acquisizione** rack CompactDAq
+  - NI 9237 -> cella di carico  
+  - NI 9215 -> fotocellule 
+  - NI 9219 -> termoresistenze
 
 > I datasheet del seguente hardaware è presente nella seguente <a href="https://github.com/EdoGitMira/Gruppo_H_pesatura_dinamica/tree/main/datasheet" target="_blank">**cartella**</a> all'interno della repository.
 
