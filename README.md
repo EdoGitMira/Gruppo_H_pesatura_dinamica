@@ -3,7 +3,7 @@
 
 L'individuazione del peso in maniera dinamica è un'applicazione attuabile in qualsiasi linea produttiva. Esso consente non solo di aumentare i ritmi produttivi evitando tempi morti, ma anche avere un costante controllo sulla massa dei pezzi prodotti. Scopo di questo progetto è lo sviluppo di un sistema predittivo per il calcolo del peso mediante tecniche di Machine Learning. A partire dai dati della cella di carico tramite un regressore lineare è possibile stimare il peso sul nastro trasportatore. 
 
-![MisureIndustriali.png](README_images/MisureIndustriali.png)
+![](README_images/MisureIndustriali.png)
 
 
 
@@ -29,6 +29,10 @@ La strumentazione utilizzata è la seguente:
 > I datasheet del seguente hardaware è presente nella seguente <a href="https://github.com/EdoGitMira/Gruppo_H_pesatura_dinamica/tree/main/datasheet" target="_blank">**cartella**</a> all'interno della repository.
 
 ## Taratura-Acquisizione
+Per caratterizzare il comportamento del sistema di misura sono state svolte tre fasi:
+- **Taratura della Cella** effettuata con 50 valori istantanei di tensione su 20 campioni di peso differente stimati utilizzando una bilancia di risoluzione di 0.01g tali da coprire il range 10-1500g
+- **Taratura statica sistema di acqusizione** sono stati attuati 5 cicli di carico e scarico, utilizzando 20 campioni non riferiti stimati utilizzando una bilancia di risoluzione di 0.01g tali da coprire il range 10-1500g.
+- **Acqusizioni dinamiche** sono state considerate 4 velocità, per ciascuna si sono utilizzati 20 campioni per 35 misurazioni consecutive. Per tenere conto dei differenti fenomeni transitori generati dai vari oggetti misurati si è scelto di utilizzare tre corpi con forme diverse e variando la distribuzione di peso al loro interno
 
 ## Pre-Procesing ed estrazione features
 
@@ -43,7 +47,7 @@ dove ![](https://latex.codecogs.com/svg.latex?&space;y) rappresenta il peso pred
 
 > Il notebook, implementato tramite Google Collab è presente nella seguente <a href="https://github.com/EdoGitMira/Gruppo_H_pesatura_dinamica/blob/main/Stima%20del%20Peso/Linear_regression.ipynb" target="_blank">**cartella**</a> all'interno della repository.
 
-`N.B.` Nel codice sono presenti anche algoritmi di PCA, risultati poi poco efficaci nel nostro caso studio. Il **dataset** è presente al seguente <a href="https://github.com/EdoGitMira/Gruppo_H_pesatura_dinamica/blob/main/Stima%20del%20Peso/Linear_regression.ipynb" target="_blank">**link**</a>
+`N.B.` Nel codice sono presenti anche algoritmi di PCA, risultati poi poco efficaci nel nostro caso studio. Il dataset è presente al seguente <a href="https://github.com/EdoGitMira/Gruppo_H_pesatura_dinamica/blob/main/Stima%20del%20Peso/Linear_regression.ipynb" target="_blank">**link**</a>
 
 # Componenti del gruppo
 |**Gioavnni Alghisi**|**Francesco Campregher**|**Marco Milanesi** | **Edoardo Mirandola** | **Abdelghani Msaad**|
