@@ -39,8 +39,8 @@ Per caratterizzare il comportamento del sistema di misura sono state svolte tre 
 ## Pre-Procesing ed estrazione features
 I dati acquisiti mediante LabView vengono pre-processati tramite un filtro a 100 Hz; successivamente vengo analizzati, suddivisi in blocchi uniformi e caricati su un archivio Github reperibile al seguente <a href="https://github.com/EdoGitMira/Gruppo_H_pesatura_dinamica/tree/main/Dati%20grezzie" target="_blank">**link**</a>.
 Il dataset è costituito da:
--**label:** il valore assunto vero ricavato dalle prove di statica iniziale e finale del carico mediante una media a indici ponderati
--**features:** consistono in N medie calcolate su N intervalli nel tratto utile del segnale 
+- **label:** il valore assunto vero ricavato dalle prove di statica iniziale e finale del carico mediante una media a indici ponderati
+- **features:** consistono in N medie calcolate su N intervalli nel tratto utile del segnale 
 Il dataset utilizzati per lo svolgimento del progetto sono reperibili alla seguente <a href="https://github.com/EdoGitMira/Gruppo_H_pesatura_dinamica/tree/main/dataset" target="_blank">**cartella**</a>
 
 ## Stima del peso tramite regressore Lineare
