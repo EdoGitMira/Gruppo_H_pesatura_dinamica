@@ -4,7 +4,7 @@
 L'individuazione del peso in maniera dinamica è un'applicazione attuabile in qualsiasi linea produttiva. Esso consente non solo di aumentare i ritmi produttivi evitando tempi morti, ma anche avere un costante controllo sulla massa dei pezzi prodotti. Scopo di questo progetto è lo sviluppo di un sistema predittivo per il calcolo del peso mediante tecniche di Machine Learning. A partire dai dati della cella di carico tramite un regressore lineare è possibile stimare il peso sul nastro trasportatore. 
 
 <p align="center">
-  <img src="README_Images/MisureIndustriali.png" width="60%" height="60%">
+  <img src="README_Images/MisureIndustriali.png" width="60%">
 </p>
 
 
@@ -24,8 +24,12 @@ L'individuazione del peso in maniera dinamica è un'applicazione attuabile in qu
 La strumentazione utilizzata è la seguente:
 - **Nastro trasportatore** del Laboratorio MMTLab;
 - **Fotocellule:** Sick GL6
-- **Schede di acquisizione** NI DAQ;
 - **Cella di carico** HBM PW22C3 con fondo scala di *10 kg*
+- **Termoresistenze** PT100
+- **Schede di acquisizione** rack CompactDAq
+  - NI 9237 -> cella di carico  
+  - NI 9215 -> fotocellule 
+  - NI 9219 -> termoresistenze
 
 > I datasheet del seguente hardaware è presente nella seguente <a href="https://github.com/EdoGitMira/Gruppo_H_pesatura_dinamica/tree/main/datasheet" target="_blank">**cartella**</a> all'interno della repository.
 
@@ -37,6 +41,11 @@ Per caratterizzare il comportamento del sistema di misura sono state svolte tre 
 
 
 ## Pre-Procesing ed estrazione features
+I dati acquisiti mediante LabView vengono pre-processati tramite un filtro a 100 Hz; successivamente vengo analizzati, suddivisi in blocchi uniformi e caricati su un archivio Github reperibile al seguente <a href="https://github.com/EdoGitMira/Gruppo_H_pesatura_dinamica/tree/main/Dati%20grezzie" target="_blank">**link**</a>.
+Il dataset è costituito da:
+- **label:** il valore assunto vero ricavato dalle prove di statica iniziale e finale del carico mediante una media a indici ponderati
+- **features:** consistono in N medie calcolate su N intervalli nel tratto utile del segnale 
+Il dataset utilizzati per lo svolgimento del progetto sono reperibili alla seguente <a href="https://github.com/EdoGitMira/Gruppo_H_pesatura_dinamica/tree/main/dataset" target="_blank">**cartella**</a>
 
 ## Stima del peso tramite regressore Lineare
 Lo sviluppo dell’algoritmo di identificazione del peso`e statoeffettuato tramite regressore lineare implementato con l’utilizzodel pacchetto *scikit-learn*. La  regressione è  stata  effettuata  partendo  dal  segnale  pre-processato e calcolando poi il valore del peso in V/V. 
@@ -49,7 +58,7 @@ dove ![](https://latex.codecogs.com/svg.latex?&space;y) rappresenta il peso pred
 
 > Il notebook, implementato tramite Google Collab è presente nella seguente <a href="https://github.com/EdoGitMira/Gruppo_H_pesatura_dinamica/blob/main/Stima%20del%20Peso/Linear_regression.ipynb" target="_blank">**cartella**</a> all'interno della repository.
 
-`N.B.` Nel codice sono presenti anche algoritmi di PCA, risultati poi poco efficaci nel nostro caso studio. Il dataset è presente al seguente <a href="https://github.com/EdoGitMira/Gruppo_H_pesatura_dinamica/blob/main/Stima%20del%20Peso/Linear_regression.ipynb" target="_blank">**link**</a>
+`N.B.` Nel codice sono presenti anche algoritmi di PCA, risultati poi poco efficaci nel nostro caso studio. Il dataset è presente al seguente <a href="https://github.com/EdoGitMira/Gruppo_H_pesatura_dinamica/tree/main/dataset" target="_blank">**link**</a>
 
 # Componenti del gruppo
 |**Gioavnni Alghisi**|**Francesco Campregher**|**Marco Milanesi** | **Edoardo Mirandola** | **Abdelghani Msaad**|
