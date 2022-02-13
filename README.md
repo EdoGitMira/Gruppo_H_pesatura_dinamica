@@ -41,7 +41,7 @@ Questa scelta è stata effettuata per generare una regressione che sia il più p
 
 dove ![](https://latex.codecogs.com/svg.latex?&space;y) rappresenta il peso predetto (in V/V), ![](https://latex.codecogs.com/svg.latex?&space;\beta_0) rappresenta l'intercetta, ![](https://latex.codecogs.com/svg.latex?&space;\beta_1,\beta_2,...,\beta_n) sono i coefficienti identificati dall'algoritmo e ![](https://latex.codecogs.com/svg.latex?&space;x_1,x_2,...,x_n) rappresentano le feature del dataset. 
 
-> Il codice, implementato tramite Google Collab è presente nella seguente <a href="https://github.com/EdoGitMira/Gruppo_H_pesatura_dinamica/tree/main/datasheet" target="_blank">**cartella**</a> all'interno della repository.
+> Il notebook, implementato tramite Google Collab è presente nella seguente <a href="https://github.com/EdoGitMira/Gruppo_H_pesatura_dinamica/tree/main/Stima%20del%20Peso" target="_blank">**cartella**</a> all'interno della repository.
 
 # Componenti del gruppo
 |**Gioavnni Alghisi**|**Francesco Campregher**|**Marco Milanesi** | **Edoardo Mirandola** | **Abdelghani Msaad**|
