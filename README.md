@@ -5,7 +5,7 @@ L'individuazione del peso in maniera dinamica è un'applicazione attuabile in qu
 
 ![](README_Images/MisureIndustriali.png)
 
-
+<img src="README_Images/MisureIndustriali.png" width="50%" height="50%">
 
 ## Tabella dei contenuti
 
