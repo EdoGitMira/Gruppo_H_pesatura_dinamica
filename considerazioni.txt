@@ -1,7 +1,0 @@
-abbiamo misurato i pesi considerando un minimo di isteresi
-controlliamo già al momento di acquisizione gli outlier
-in base a come li si gira variano di 5 centesimi
-ci sono state variazioni sistematiche di +-4/3 centesimi
-media mobile da fare (media al variare del tempo, suddivido i dati in sotto dati e ne calcolo la media)
-le scatole utilizzate sono di varie dimensioni e inoltre sono state posizionate in modo differente da misura a misura
-le velocità dei due nastri sono state settate uguali ipotizzando che sia un setup verosimile in un azienda
