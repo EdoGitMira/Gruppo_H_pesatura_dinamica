@@ -30,9 +30,10 @@ La strumentazione utilizzata è la seguente:
 
 ## Taratura-Acquisizione
 Per caratterizzare il comportamento del sistema di misura sono state svolte tre fasi:
-- **Taratura della Cella** effettuata con 50 valori istantanei di tensione su 20 campioni di peso differente stimati utilizzando una bilancia di risoluzione di 0.01g tali da coprire il range 10-1500g
-- **Taratura statica sistema di acqusizione** sono stati attuati 5 cicli di carico e scarico, utilizzando 20 campioni non riferiti stimati utilizzando una bilancia di risoluzione di 0.01g tali da coprire il range 10-1500g.
-- **Acqusizioni dinamiche** sono state considerate 4 velocità, per ciascuna si sono utilizzati 20 campioni per 35 misurazioni consecutive. Per tenere conto dei differenti fenomeni transitori generati dai vari oggetti misurati si è scelto di utilizzare tre corpi con forme diverse e variando la distribuzione di peso al loro interno
+- **Taratura della Cella** effettuata con 50 valori istantanei di tensione su 20 campioni di peso differente stimati utilizzando una bilancia di risoluzione di 0.01g tali da coprire il range 10-1500g. Il codice è reperibile al seguente <a href="https://github.com/EdoGitMira/Gruppo_H_pesatura_dinamica/tree/main/Script/Taratura_Statica" target="_blank">**link**</a> all'interno della repository.
+- **Taratura statica sistema di acqusizione** sono stati attuati 5 cicli di carico e scarico, utilizzando 20 campioni non riferiti stimati utilizzando una bilancia di risoluzione di 0.01g tali da coprire il range 10-1500g.Il codice è reperibile al seguente <a href="https://github.com/EdoGitMira/Gruppo_H_pesatura_dinamica/tree/main/Script/Taratura_Statica" target="_blank">**link**</a> all'interno della repository.
+- **Acqusizioni dinamiche** sono state considerate 4 velocità, per ciascuna si sono utilizzati 20 campioni per 35 misurazioni consecutive. Per tenere conto dei differenti fenomeni transitori generati dai vari oggetti misurati si è scelto di utilizzare tre corpi con forme diverse e variando la distribuzione di peso al loro interno. Il codice è reperibile al seguente <a href="https://github.com/EdoGitMira/Gruppo_H_pesatura_dinamica/tree/main/Script/Estrazione_Feature" target="_blank">**link**</a> all'interno della repository.
+
 
 ## Pre-Procesing ed estrazione features
 
