@@ -43,6 +43,8 @@ dove ![](https://latex.codecogs.com/svg.latex?&space;y) rappresenta il peso pred
 
 > Il notebook, implementato tramite Google Collab è presente nella seguente <a href="https://github.com/EdoGitMira/Gruppo_H_pesatura_dinamica/blob/main/Stima%20del%20Peso/Linear_regression.ipynb" target="_blank">**cartella**</a> all'interno della repository.
 
+`N.B.` Nel codice sono presenti anche algoritmi di PCA, risultati poi poco efficaci nel nostro caso studio. Il dataset è presente al seguente <a href="https://github.com/EdoGitMira/Gruppo_H_pesatura_dinamica/blob/main/Stima%20del%20Peso/Linear_regression.ipynb" target="_blank">**link**</a>
+
 # Componenti del gruppo
 |**Gioavnni Alghisi**|**Francesco Campregher**|**Marco Milanesi** | **Edoardo Mirandola** | **Abdelghani Msaad**|
 | :---: |:---:|:---:|:---:|:---:|
