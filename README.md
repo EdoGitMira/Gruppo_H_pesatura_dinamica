@@ -33,8 +33,15 @@ La strumentazione utilizzata è la seguente:
 ## Pre-Procesing ed estrazione features
 
 ## Stima del peso tramite regressore Lineare
+Lo sviluppo dell’algoritmo di identificazione del peso`e statoeffettuato tramite regressore lineare implementato con l’utilizzodel pacchetto *scikit-learn*. La  regressione è  stata  effettuata  partendo  dal  segnale  pre-processato e calcolando poi il valore del peso in V/V. 
 
+Questa scelta è stata effettuata per generare una regressione che sia il più possibile robusta nei confronti dei disturbi esterni. Il regressore lineare sar`a quindi del tipo:
 
+![](https://latex.codecogs.com/svg.latex?\Large&space;y=\beta_0+\beta_1x_1+\beta_2x_2+...+\beta_nx_n) 
+
+dove ![](https://latex.codecogs.com/svg.latex?&space;y) rappresenta il peso predetto (in V/V), ![](https://latex.codecogs.com/svg.latex?&space;\beta_0) rappresenta l'intercetta, ![](https://latex.codecogs.com/svg.latex?&space;\beta_1,\beta_2,...,\beta_n) sono i coefficienti identificati dall'algoritmo e ![](https://latex.codecogs.com/svg.latex?&space;x_1,x_2,...,x_n) rappresentano le feature del dataset. 
+
+> Il codice, implementato tramite Google Collab è presente nella seguente <a href="https://github.com/EdoGitMira/Gruppo_H_pesatura_dinamica/tree/main/datasheet" target="_blank">**cartella**</a> all'interno della repository.
 
 # Componenti del gruppo
 |**Gioavnni Alghisi**|**Francesco Campregher**|**Marco Milanesi** | **Edoardo Mirandola** | **Abdelghani Msaad**|
